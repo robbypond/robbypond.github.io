@@ -10,43 +10,11 @@ tab: projects
 </header>
 
 <section>
-	<div class="row">
-		<div class="span5">
-			<h6>Issues</h6>
-			<dl data-bind="visible: issues().length > 0">
-				<!-- ko foreach: issues -->
-				<dt><a data-bind="attr: { href: html_url }, text: '#'+number"></a> &ndash; <span data-bind="text: title"></span></dt>
-				<!-- ko if: labels -->
-				<dd>
-					<!-- ko foreach: labels -->
-					<span class="label" data-bind="text: name"></span>
-					<!-- /ko -->
-				</dd>
-				<!-- /ko -->
-				<!-- /ko -->
-			</dl>
-			<p data-bind="visible: issues().length == 0">No issues</p>
-		</div>
-		<div class="span3 offset1">
-			<h6>Contributors</h6>
-			<ul class="unstyled contributors" data-bind="foreach: contributors">
-				<li><a data-bind="attr: { href: $root.userAction(login) }">
-					<img data-bind="attr: { src: avatar_url }" width="20px"> <span data-bind="text: login"></span></a> <span class="label" data-bind="text: contributions"></span>
-				</li>
-			</ul>
-		</div>
-		<div class="span3">
-			<h6>Latest Tags</h6>
-			<ul class="unstyled tags" data-bind="foreach: tags, visible: tags().length > 0">
-				<li><span data-bind="text: name"></span> &mdash; <a data-bind="attr: { href: zipball_url }">Zip</a> &middot; <a data-bind="attr: { href: tarball_url }">Tarball</a></li>
-			</ul>
-			<p data-bind="visible: tags().length == 0">No tags</p>
-		</div>
-	</div>
 </section>
 
 <script type="text/javascript" src="/static/knockout.min.js"></script>
 <script type="text/javascript">
+/*
 	$(function() {
 		function ViewModel() {
 			var self = this;
@@ -92,5 +60,5 @@ tab: projects
 			});
 		}
 		ko.applyBindings(new ViewModel());
-	});
+	});*/
 </script>
