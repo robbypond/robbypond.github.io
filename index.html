@@ -22,7 +22,7 @@ tab: home
 			<p><a href="/posts.html">Show me more &rarr;</a></p>
 		</div>
 		<div class="span6">
-			<h1>Libraries <small></small></h1>
+			<h1>Projects <small>Libraries, apps, things I've done</small></h1>
 			<dl>
 				{% for post in site.categories.project limit: 4 %}
 				<dt><a href="{{ post.url }}">{{ post.title }}</a></dt>
@@ -30,16 +30,6 @@ tab: home
 				{% endfor %}
 			</dl>
 			<p><a href="/projects.html">Show me more &rarr;</a></p>
-		</div>
-		<div class="span6">
-			<h1>Apps <small>Things I've released</small></h1>
-			<dl>
-				{% for post in site.categories.apps limit: 4 %}
-				<dt><a href="{{ post.url }}">{{ post.title }}</a></dt>
-				<dd>{{ post.content }}</dd>
-				{% endfor %}
-			</dl>
-			<p><a href="/apps.html">Show me more &rarr;</a></p>
 		</div>
 	</div>
 </section>
