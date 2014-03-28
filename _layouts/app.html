@@ -1,0 +1,103 @@
+---
+layout: default
+tab: projects
+---
+
+<header>
+	<h1>{{ page.title }}</h1>
+	<p>{{ content }}</p>
+</header>
+
+<section>
+</section>
+
+<script type="text/javascript" src="/static/knockout.min.js"></script>
+<script type="text/javascript">
+// invoke the carousel
+$('#myCarousel').carousel({
+  interval: 3000
+});
+
+/* SLIDE ON CLICK */ 
+
+$('.carousel-linked-nav > li > a').click(function() {
+
+    // grab href, remove pound sign, convert to number
+    var item = Number($(this).attr('href').substring(1));
+
+    // slide to number -1 (account for zero indexing)
+    $('#myCarousel').carousel(item - 1);
+
+    // remove current active class
+    $('.carousel-linked-nav .active').removeClass('active');
+
+    // add active class to just clicked on item
+    $(this).parent().addClass('active');
+
+    // don't follow the link
+    return false;
+});
+
+/* AUTOPLAY NAV HIGHLIGHT */
+
+// bind 'slid' function
+$('#myCarousel').bind('slid', function() {
+
+    // remove active class
+    $('.carousel-linked-nav .active').removeClass('active');
+
+    // get index of currently active item
+    var idx = $('#myCarousel .item.active').index();
+
+    // select currently active item and add active class
+    $('.carousel-linked-nav li:eq(' + idx + ')').addClass('active');
+
+});
+/*
+	$(function() {
+		function ViewModel() {
+			var self = this;
+
+			self.info = ko.observable();
+			self.tags = ko.observableArray();
+			self.issues = ko.observableArray();
+			self.contributors = ko.observableArray();
+
+			self.userAction = function(username) {
+				return 'http://github.com/' + username;
+			};
+
+			$.getJSON('https://api.github.com/repos/{{ page.owner }}/{{ page.repo }}?callback=?', function(response) {
+				self.info(response.data);
+			});
+			$.getJSON('https://api.github.com/repos/{{ page.owner }}/{{ page.repo }}/tags?callback=?', function(response) {
+				var data = response.data;
+
+				//Sort alphabetically
+				data.sort(function(o1, o2) {
+					return (o1.name > o2.name) ? -1 : 1;
+				});
+				self.tags(data);
+			});
+			$.getJSON('https://api.github.com/repos/{{ page.owner }}/{{ page.repo }}/contributors?callback=?', function(response) {
+				var data = response.data;
+
+				//Sort by contributions
+				data.sort(function(o1, o2) {
+					return o2.contributions - o1.contributions;
+				});
+				self.contributors(data);
+			});
+			$.getJSON('https://api.github.com/repos/{{ page.owner }}/{{ page.repo }}/issues?callback=?', function(response) {
+				var data = response.data;
+
+				//Sort by contributions
+				data.sort(function(o1, o2) {
+					return o2.number - o1.number;
+				});
+				self.issues(data);
+			});
+		}
+		ko.applyBindings(new ViewModel());
+	});*/
+</script>
