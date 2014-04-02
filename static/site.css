@@ -90,9 +90,3 @@ dd {
 .post-list li a {
 	font-weight: bold;
 }
-
-.center div img {
-	display: block;
-    	margin-left: auto;
-    	margin-right: auto;
-}
