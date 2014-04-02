@@ -90,3 +90,7 @@ dd {
 .post-list li a {
 	font-weight: bold;
 }
+
+.center {
+	text-align: center;
+}
