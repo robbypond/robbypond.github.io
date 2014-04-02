@@ -94,3 +94,7 @@ dd {
 .center {
 	text-align: center;
 }
+
+.button-bar {
+	height: 60px;
+}
