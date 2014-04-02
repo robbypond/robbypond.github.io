@@ -10,10 +10,9 @@ tab: projects
 
 <section>
 	<div class="cycle-slideshow">
-    		<img src="http://malsup.github.io/images/p1.jpg">
-    		<img src="http://malsup.github.io/images/p2.jpg">
-    		<img src="http://malsup.github.io/images/p3.jpg">
-    		<img src="http://malsup.github.io/images/p4.jpg">
+	        {% for image in page.images %}
+		<img src="{{ image }}">
+		{% endfor %}
 	</div>
 </section>
 
