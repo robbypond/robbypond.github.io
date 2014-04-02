@@ -91,7 +91,8 @@ dd {
 	font-weight: bold;
 }
 
-.center {
+.center img {
+	display: block;
     	margin-left: auto;
     	margin-right: auto;
 }
