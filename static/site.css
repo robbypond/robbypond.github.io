@@ -98,3 +98,7 @@ dd {
 .button-bar {
 	height: 60px;
 }
+
+.button-bar img {
+	height: 100%;
+}
